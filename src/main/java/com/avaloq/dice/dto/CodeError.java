@@ -6,7 +6,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * DTO used for inform control errors occurred on the application
+ * code:  Internal code
+ * description: text to describe the error
+ * @author dvicensnoguera
+ *
+ */
 @Getter
 @Setter
 @AllArgsConstructor

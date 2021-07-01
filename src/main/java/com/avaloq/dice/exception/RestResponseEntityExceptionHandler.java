@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 /**
- * Handler class to manage the customize DiceRuntimeException
+ * Handler class to manage the custom DiceRuntimeException
  * @author dvicensnoguera
  *
  */

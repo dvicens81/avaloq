@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.avaloq.dice.dto.CodeError;
 /**
- * Customize runtimeException 
+ * Custom runtimeException 
  * Contains list of CodeError
  * @author dvicensnoguera
  *

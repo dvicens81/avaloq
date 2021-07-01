@@ -12,13 +12,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity(name = "dices")
-@Table(name = "dices")
+@Entity(name = "rolls")
+@Table(name = "rolls")
 @Builder
 @Getter
 @Setter
 @AllArgsConstructor
-public class DiceEntity {
+public class RollEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -26,10 +26,12 @@ public class DiceEntity {
 	private Integer numberDice;
 	@Column(name = "side_dice")
 	private Integer sideDice;
-	@Column(name = "total_roll")
-	private Integer totalRoll;
+	@Column(name = "number")
+	private Integer number;
+	@Column(name="total")
+	private Integer total;
 	
-	public DiceEntity() {
-		//empry constructor
+	public RollEntity() {
+		//empty constructor
 	}
 }

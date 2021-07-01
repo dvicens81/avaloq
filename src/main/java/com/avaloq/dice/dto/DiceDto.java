@@ -1,9 +1,9 @@
 package com.avaloq.dice.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 /**
  * DTO to return on the response
  * 
@@ -12,8 +12,8 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@AllArgsConstructor
-@Builder
+@NoArgsConstructor
+@SuperBuilder
 public class DiceDto {
 
 	private int number;

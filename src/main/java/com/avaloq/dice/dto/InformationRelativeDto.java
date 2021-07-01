@@ -9,10 +9,8 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
-public class TotalRollDto {
+public class InformationRelativeDto extends DiceDto {
 	
-	private int numberDice;
-	private int sideDice;
-	private int totalRolls;
+	private String percentage;
 
 }

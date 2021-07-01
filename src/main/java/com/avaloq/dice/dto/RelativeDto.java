@@ -1,5 +1,7 @@
 package com.avaloq.dice.dto;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,10 +11,9 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
-public class TotalRollDto {
+public class RelativeDto {
 	
-	private int numberDice;
-	private int sideDice;
-	private int totalRolls;
+	private TotalRollDto roll;
+	private List<InformationRelativeDto> information;
 
 }

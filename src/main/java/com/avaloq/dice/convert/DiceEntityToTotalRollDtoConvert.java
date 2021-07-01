@@ -22,7 +22,7 @@ public class DiceEntityToTotalRollDtoConvert {
 	private TotalRollDto buildTotalRoll(DiceEntity diceEntity) {
 		return TotalRollDto.builder()
 							.numberDice(diceEntity.getNumberDice())
-							.totalRolls(diceEntity.getId())
+							.totalRolls(diceEntity.getTotalRoll())
 							.sideDice(diceEntity.getSideDice())
 							.build();							
 	}

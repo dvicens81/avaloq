@@ -5,10 +5,12 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.avaloq.dice.convert.DiceFilterToDiceEntity;
 import com.avaloq.dice.convert.DiceMapToDiceDtoConvert;
 import com.avaloq.dice.dto.DiceDto;
 import com.avaloq.dice.dto.DiceFilter;
 import com.avaloq.dice.operation.DiceCompleteRollOperation;
+import com.avaloq.dice.repository.DiceRepository;
 import com.avaloq.dice.validate.DiceValidateForm;
 
 import lombok.AllArgsConstructor;
@@ -29,12 +31,17 @@ public class DiceServiceImpl implements DiceService {
 	private final DiceCompleteRollOperation diceDistribution;
 	private final DiceMapToDiceDtoConvert convert;
 	private final DiceValidateForm validate;
+	private final DiceRepository diceRepository;
+	private final DiceFilterToDiceEntity diceFilterToDiceEntity;
 
 	@Override
 	public List<DiceDto> getRoll(DiceFilter diceFilter) {
 		//validate the information filled
 		validate.validateInformation(diceFilter);
 		Map<Integer, Integer> map = diceDistribution.getRollInformation(diceFilter);
+		//save data on database
+		diceRepository.save(diceFilterToDiceEntity.convert(diceFilter));
+		//return the result
 		return convert.convert(map);
 	}
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,11 +25,11 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/api/v1/roll")
 @Slf4j
-public class DiceController implements DiceOperations {
+public class DiceController {
 	
 	private final DiceService diceService;
 	
-	@Override
+	@GetMapping
 	public ResponseEntity<List<DiceDto>> getInformation(DiceFilter diceFilter) {
 		log.debug("Get information numberDice {}, sides {} and total of rolls {}", diceFilter.getNumber(), diceFilter.getSides(), diceFilter.getTotalRolls());
 		return new ResponseEntity<>(diceService.getRoll(diceFilter), HttpStatus.OK);

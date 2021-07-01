@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.avaloq.dice.convert.DiceFilterToDiceEntity;
+import com.avaloq.dice.convert.DiceFilterToDiceEntityConvert;
 import com.avaloq.dice.convert.DiceMapToDiceDtoConvert;
 import com.avaloq.dice.dto.DiceDto;
 import com.avaloq.dice.dto.DiceFilter;
@@ -32,7 +32,7 @@ public class DiceServiceImpl implements DiceService {
 	private final DiceMapToDiceDtoConvert convert;
 	private final DiceValidateForm validate;
 	private final DiceRepository diceRepository;
-	private final DiceFilterToDiceEntity diceFilterToDiceEntity;
+	private final DiceFilterToDiceEntityConvert diceFilterToDiceEntity;
 
 	@Override
 	public List<DiceDto> getRoll(DiceFilter diceFilter) {

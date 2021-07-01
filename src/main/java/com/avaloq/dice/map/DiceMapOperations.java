@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class DiceMap {
+public class DiceMapOperations {
 	/**
 	 * Receive sum of the roll and add or update the information on the Map.
 	 * @param map

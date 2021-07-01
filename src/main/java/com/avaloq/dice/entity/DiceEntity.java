@@ -7,8 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity(name = "dices")
 @Table(name = "dices")
+@Builder
+@Getter
+@Setter
 public class DiceEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,29 +26,4 @@ public class DiceEntity {
 	private Integer sideDice;
 	@Column(name = "total_roll")
 	private Integer totalRoll;
-	
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	public Integer getNumberDice() {
-		return numberDice;
-	}
-	public void setNumberDice(Integer numberDice) {
-		this.numberDice = numberDice;
-	}
-	public Integer getSideDice() {
-		return sideDice;
-	}
-	public void setSideDice(Integer sideDice) {
-		this.sideDice = sideDice;
-	}
-	public Integer getTotalRoll() {
-		return totalRoll;
-	}
-	public void setTotalRoll(Integer totalRoll) {
-		this.totalRoll = totalRoll;
-	}
 }

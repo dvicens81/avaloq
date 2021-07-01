@@ -13,10 +13,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.avaloq.dice.convert.DiceFilterToDiceEntityConvert;
 import com.avaloq.dice.convert.DiceMapToDiceDtoConvert;
 import com.avaloq.dice.dto.DiceDto;
 import com.avaloq.dice.dto.DiceFilter;
 import com.avaloq.dice.operation.DiceCompleteRollOperation;
+import com.avaloq.dice.repository.DiceRepository;
 import com.avaloq.dice.validate.DiceValidateForm;
 
 @SpringBootTest
@@ -27,9 +29,13 @@ public class DiceServiceTest {
 	@Mock
 	private DiceCompleteRollOperation diceDistribution;
 	@Mock
-	private DiceMapToDiceDtoConvert convert;
+	private DiceMapToDiceDtoConvert diceMapToDiceDtoConvert;
 	@Mock
 	private DiceValidateForm validate;
+	@Mock
+	private DiceRepository diceRepository;
+	@Mock
+	private DiceFilterToDiceEntityConvert diceFilterToDiceEntity;
 	
 	@Test
 	public void testService() {
@@ -45,7 +51,7 @@ public class DiceServiceTest {
 		expectedListResult.add(DiceDto.builder().number(7).times(3).build());
 		
 		when(diceDistribution.getRollInformation(diceFilter)).thenReturn(expectedMapResult);
-		when(convert.convert(expectedMapResult)).thenReturn(expectedListResult);
+		when(diceMapToDiceDtoConvert.convert(expectedMapResult)).thenReturn(expectedListResult);
 		
 		List<DiceDto> result = diceService.getRoll(diceFilter);
 		assertEquals(2, result.get(0).getNumber());

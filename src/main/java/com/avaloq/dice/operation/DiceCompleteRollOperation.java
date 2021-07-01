@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.stereotype.Component;
 
 import com.avaloq.dice.dto.DiceFilter;
-import com.avaloq.dice.map.DiceMap;
+import com.avaloq.dice.map.DiceMapOperations;
 
 import lombok.AllArgsConstructor;
 /**
@@ -19,7 +19,7 @@ import lombok.AllArgsConstructor;
 public class DiceCompleteRollOperation {
 	
 	private final DiceSpecificRollOperation diceSpecificRollOperation;
-	private final DiceMap diceMap;
+	private final DiceMapOperations diceMap;
 	
 	/**
 	 * Iterate the number of total rolls and

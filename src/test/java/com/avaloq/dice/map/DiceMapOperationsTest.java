@@ -10,10 +10,10 @@ import org.mockito.InjectMocks;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class DiceMapTest {
+public class DiceMapOperationsTest {
 	
 	@InjectMocks
-	private DiceMap diceMap;
+	private DiceMapOperations diceMap;
 	
 	@Test
 	public void testMap() {

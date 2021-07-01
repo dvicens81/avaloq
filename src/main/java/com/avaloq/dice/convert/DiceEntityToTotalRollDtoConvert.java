@@ -7,7 +7,11 @@ import org.springframework.stereotype.Component;
 
 import com.avaloq.dice.dto.TotalRollDto;
 import com.avaloq.dice.entity.DiceEntity;
-
+/**
+ * Convert DiceEntity to TotalRollDto
+ * @author dvicensnoguera
+ *
+ */
 @Component
 public class DiceEntityToTotalRollDtoConvert {
 	

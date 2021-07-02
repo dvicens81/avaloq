@@ -23,7 +23,7 @@ import lombok.AllArgsConstructor;
  */
 @Service
 @AllArgsConstructor
-public class RelativeDistributonServiceImpl implements RelativeDistributionService{
+public class PercentageServiceImpl implements PercentageService{
 	
 	private final RollRepository rollRepository;
 	private final ListRollEntityToRelativeDtoConvert listRollEntityToRelativeDtoConvert;

@@ -38,7 +38,7 @@ public class DiceServiceTest {
 	@Mock
 	private DiceFilterToDiceEntityConvert diceFilterToDiceEntity;
 	@Mock
-	private RelativeDistributionService relativeDistributionService; 
+	private PercentageService relativeDistributionService; 
 	@Mock
 	private MapDiceFilterToRollEntityConvert mapDiceFilterToRollEntityConvert;
 	

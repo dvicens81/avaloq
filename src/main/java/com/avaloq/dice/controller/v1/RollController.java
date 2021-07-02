@@ -9,13 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.avaloq.dice.dto.RollDto;
-import com.avaloq.dice.service.TotalRollService;
+import com.avaloq.dice.service.RollService;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Controller class for the total Roll
+ * Controller class.
+ * Return information related with all the rolls, number-side dide combination executed on the application
+ * 
+ * 
  * @author dvicensnoguera
  *
  */
@@ -24,9 +27,9 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/api/v1/totalroll")
 @Slf4j
-public class TotalRollController {
+public class RollController {
 	
-	private final TotalRollService totalRollService;
+	private final RollService totalRollService;
 	
 	@GetMapping
 	public ResponseEntity<List<RollDto>> getTotalRolls() {

@@ -18,10 +18,10 @@ import com.avaloq.dice.entity.DiceEntity;
 import com.avaloq.dice.repository.DiceRepository;
 
 @SpringBootTest
-public class TotalRollServiceTest {
+public class RollServiceTest {
 	
 	@InjectMocks
-	private TotalRollServiceImpl totalRollService;
+	private RollServiceImpl totalRollService;
 	@Mock
 	private DiceRepository diceRepository;
 	@Mock

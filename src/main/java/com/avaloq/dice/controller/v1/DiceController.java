@@ -17,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * Controller class for the dice
+ * Returns a list of sum of the dices and total times that appears the number on all the rolls 
  * @author dvicensnoguera
  *
  */

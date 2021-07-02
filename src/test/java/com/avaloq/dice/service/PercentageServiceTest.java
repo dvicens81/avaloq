@@ -22,10 +22,10 @@ import com.avaloq.dice.entity.RollEntity;
 import com.avaloq.dice.repository.RollRepository;
 
 @SpringBootTest
-public class RelativeDistributonServiceTest {
+public class PercentageServiceTest {
 	
 	@InjectMocks
-	private RelativeDistributonServiceImpl relativeDistributionService;
+	private PercentageServiceImpl relativeDistributionService;
 	@Mock
 	private RollRepository rollRepository;
 	@Mock

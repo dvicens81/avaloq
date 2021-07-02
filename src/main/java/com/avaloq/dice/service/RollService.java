@@ -9,7 +9,7 @@ import com.avaloq.dice.dto.RollDto;
  * @author dvicensnoguera
  *
  */
-public interface TotalRollService {
+public interface RollService {
 	
 	public List<RollDto> getTotalRolls();
 

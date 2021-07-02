@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
  */
 @Service
 @AllArgsConstructor
-public class TotalRollServiceImpl implements TotalRollService {
+public class RollServiceImpl implements RollService {
 	
 	private final DiceRepository diceRepository;
 	private final DiceEntityToTotalRollDtoConvert diceEntityToTotalRollConvert;

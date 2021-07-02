@@ -18,9 +18,8 @@ import lombok.AllArgsConstructor;
 
 /**
  * Service layer.
- * It is a middle class that do specific actions (validate, roll the dices and convert).
  * 
- * This class dispatch to other classes the functionalities to do. 
+ * This class is implemented to dispatch the differents actions (validate, roll the dices, convert and save the data). 
  * 
  * @author dvicensnoguera
  *
@@ -35,7 +34,7 @@ public class DiceServiceImpl implements DiceService {
 	private final DiceRepository diceRepository;
 	private final DiceFilterToDiceEntityConvert diceFilterToDiceEntity;
 	//Only one point of access to rollRepository and is this service
-	private final RelativeDistributionService relativeDistributionService; 
+	private final PercentageService relativeDistributionService; 
 	private final MapDiceFilterToRollEntityConvert mapDiceFilterToRollEntityConvert;
 
 	@Override

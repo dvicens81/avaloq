@@ -5,7 +5,7 @@ import java.util.List;
 import com.avaloq.dice.dto.RelativeDto;
 import com.avaloq.dice.entity.RollEntity;
 
-public interface RelativeDistributionService {
+public interface PercentageService {
 	
 	RelativeDto getRelativeDistribution(int numberDice, int sideDice);
 	

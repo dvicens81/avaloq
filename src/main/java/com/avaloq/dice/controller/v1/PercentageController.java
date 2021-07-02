@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.avaloq.dice.dto.RelativeDto;
-import com.avaloq.dice.service.RelativeDistributionService;
+import com.avaloq.dice.service.PercentageService;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Controller class for the total Roll
+ * Controller class
+ * Receive numberDIce and sideDice and return a dto 
+ * that contains the information related with the parameters send it.
+ * Total rolls, percentage of the numbers that were appeared.
  * @author dvicensnoguera
  *
  */
@@ -23,9 +26,9 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/api/v1/relative")
 @Slf4j
-public class RelativeController {
+public class PercentageController {
 	
-	private final RelativeDistributionService relativeDistributionService;
+	private final PercentageService relativeDistributionService;
 	
 	@GetMapping("/numberDice/{numberDice}/sideDice/{sideDice}")
 	public ResponseEntity<RelativeDto> getRelativeDistribution(@PathVariable("numberDice") Integer numberDice,

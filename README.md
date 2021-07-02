@@ -42,6 +42,7 @@ mvn spring-boot:run
        * one for the assignment 2.1 (dices)
        * assignment 2.2 (rolls)
 * I took this decision because it is more effective to have one table for every purpose.
+* All the classes have junit test.
 
 
 

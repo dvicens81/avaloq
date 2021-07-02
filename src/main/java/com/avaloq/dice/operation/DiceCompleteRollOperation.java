@@ -10,7 +10,10 @@ import com.avaloq.dice.map.DiceMapOperations;
 
 import lombok.AllArgsConstructor;
 /**
- * Class to execute all the roll operation
+ * This class is implemented to iterate the totalRoll send it
+ * and dispatch on specific class the operations needed to 
+ * fill the map
+ * Key is the result of the sum of the dices and VALUE the times to appear the result
  * @author dvicensnoguera
  *
  */

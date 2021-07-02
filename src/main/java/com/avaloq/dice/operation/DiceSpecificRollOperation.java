@@ -4,7 +4,7 @@ import java.util.Random;
 
 import org.springframework.stereotype.Component;
 /**
- *  Calculate to execute for one roll
+ * This class is implemented to get the total number for one roll
  *  
  * 
  * author David Vicens

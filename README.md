@@ -9,9 +9,14 @@ Project is created with:
 * Junit 5
 
 ## Build and deploy
-```shell
+```
 mvn spring-boot:run
 ```
+## Run test
+```
+mvn test
+```
+
 
 ## Swagger
 * http://localhost:8091/swagger-ui/

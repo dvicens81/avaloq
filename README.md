@@ -34,8 +34,6 @@ mvn spring-boot:run
 
 * The database used is H2 Embedded because I thought that is more easy for testing purpose. 
 * It is important to know that every time that the application is started, the database is empty. 
-
-* I created an endpoint for every assignment.
 * The first assignment is saving the data on database and have a validation layer and if some value is not correct the application throw custom error an returns an array informing an internal code and the description.
 * I implemented custom exception.
 * I created two table 

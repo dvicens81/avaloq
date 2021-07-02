@@ -36,7 +36,7 @@ mvn spring-boot:run
 * It is important to know that every time that the application is started, the database is empty. 
 * The first assignment is saving the data on database and have a validation layer and if some value is not correct the application throw custom error an returns an array informing an internal code and the description.
 * I implemented custom exception.
-* I created two table 
+* I created two tables
        * one for the assignment 2.1 (dices)
        * assignment 2.2 (rolls)
 * I took this decision because it is more effective to have one table for every purpose.

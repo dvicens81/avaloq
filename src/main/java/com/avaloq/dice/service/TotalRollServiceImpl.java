@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.avaloq.dice.convert.DiceEntityToTotalRollDtoConvert;
-import com.avaloq.dice.dto.TotalRollDto;
+import com.avaloq.dice.dto.RollDto;
 import com.avaloq.dice.repository.DiceRepository;
 
 import lombok.AllArgsConstructor;
 /**
  * Service layer.
- * Provide the total of the simulations by existing dice number–dice side
+ * Provide the total of rolls by number–dice side combination
  * @author dvicensnoguera
  *
  */
@@ -22,11 +22,8 @@ public class TotalRollServiceImpl implements TotalRollService {
 	private final DiceRepository diceRepository;
 	private final DiceEntityToTotalRollDtoConvert diceEntityToTotalRollConvert;
 	
-	/**
-	 * Provide the total of the simulations by existing dice number–dice side
-	 */
 	@Override
-	public List<TotalRollDto> getTotalRolls() {
-		return diceEntityToTotalRollConvert.convert(diceRepository.getDiceEntities());
+	public List<RollDto> getTotalRolls() {
+		return diceEntityToTotalRollConvert.convert(diceRepository.getTotalRollByNumberAndSideDice());
 	}
 }

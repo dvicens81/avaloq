@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * DTO to get the parameter on the url of the endpoint
+ * POJO to get the parameter on the url of the endpoint
  * 
  * @author dvicensnoguera
  *

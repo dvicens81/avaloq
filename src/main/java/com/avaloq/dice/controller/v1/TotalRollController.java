@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.avaloq.dice.dto.TotalRollDto;
+import com.avaloq.dice.dto.RollDto;
 import com.avaloq.dice.service.TotalRollService;
 
 import lombok.AllArgsConstructor;
@@ -29,7 +29,7 @@ public class TotalRollController {
 	private final TotalRollService totalRollService;
 	
 	@GetMapping
-	public ResponseEntity<List<TotalRollDto>> getTotalRolls() {
+	public ResponseEntity<List<RollDto>> getTotalRolls() {
 		log.debug("Get Total Rolls");
 		return new ResponseEntity<>(totalRollService.getTotalRolls(), HttpStatus.OK);
 	}

@@ -2,7 +2,7 @@ package com.avaloq.dice.service;
 
 import java.util.List;
 
-import com.avaloq.dice.dto.TotalRollDto;
+import com.avaloq.dice.dto.RollDto;
 /**
  * Service layer.
  * Provide the total of the simulations by existing dice number–dice side
@@ -11,6 +11,6 @@ import com.avaloq.dice.dto.TotalRollDto;
  */
 public interface TotalRollService {
 	
-	public List<TotalRollDto> getTotalRolls();
+	public List<RollDto> getTotalRolls();
 
 }

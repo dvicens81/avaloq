@@ -12,6 +12,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Dices table
+ * Is used to save the information related with the roll.
+ * Is storage the number dice and side of the dice and the total rolls did it.
+ * 
+ * @author dvicensnoguera
+ *
+ */
 @Entity(name = "dices")
 @Table(name = "dices")
 @Builder

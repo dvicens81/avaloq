@@ -12,7 +12,6 @@ import com.avaloq.dice.dto.DiceDto;
 import com.avaloq.dice.dto.DiceFilter;
 import com.avaloq.dice.operation.DiceCompleteRollOperation;
 import com.avaloq.dice.repository.DiceRepository;
-import com.avaloq.dice.repository.RollRepository;
 import com.avaloq.dice.validate.DiceValidateForm;
 
 import lombok.AllArgsConstructor;
@@ -31,23 +30,25 @@ import lombok.AllArgsConstructor;
 public class DiceServiceImpl implements DiceService {
 	
 	private final DiceCompleteRollOperation diceDistribution;
-	private final DiceMapToDiceDtoConvert convert;
-	private final DiceValidateForm validate;
+	private final DiceMapToDiceDtoConvert diceMapToDiceDtoConvert;
+	private final DiceValidateForm validateForm;
 	private final DiceRepository diceRepository;
 	private final DiceFilterToDiceEntityConvert diceFilterToDiceEntity;
-	private final RollRepository rollRepository;
+	//Only one point of access to rollRepository and is this service
+	private final RelativeDistributionService relativeDistributionService; 
 	private final MapDiceFilterToRollEntityConvert mapDiceFilterToRollEntityConvert;
 
 	@Override
 	public List<DiceDto> getRoll(DiceFilter diceFilter) {
 		//validate the information filled
-		validate.validateInformation(diceFilter);
+		validateForm.validateInformation(diceFilter);
+		//Get roll information
 		Map<Integer, Integer> map = diceDistribution.getRollInformation(diceFilter);
 		//save data on database
 		diceRepository.save(diceFilterToDiceEntity.convert(diceFilter));
-		rollRepository.saveAll(mapDiceFilterToRollEntityConvert.convert(map, diceFilter));		
+		relativeDistributionService.saveAll(mapDiceFilterToRollEntityConvert.convert(map, diceFilter));		
 		//return the result
-		return convert.convert(map);
+		return diceMapToDiceDtoConvert.convert(map);
 	}
 
 }

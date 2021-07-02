@@ -13,7 +13,7 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.avaloq.dice.convert.DiceEntityToTotalRollDtoConvert;
-import com.avaloq.dice.dto.TotalRollDto;
+import com.avaloq.dice.dto.RollDto;
 import com.avaloq.dice.entity.DiceEntity;
 import com.avaloq.dice.repository.DiceRepository;
 
@@ -33,14 +33,14 @@ public class TotalRollServiceTest {
 		listDiceEntity.add(DiceEntity.builder().numberDice(2).sideDice(4).id(20).build());
 		listDiceEntity.add(DiceEntity.builder().numberDice(1).sideDice(6).id(40).build());
 		
-		List<TotalRollDto> listTotalRoll = new ArrayList<>();
-		listTotalRoll.add(TotalRollDto.builder().numberDice(2).sideDice(4).totalRolls(20).build());
-		listTotalRoll.add(TotalRollDto.builder().numberDice(1).sideDice(6).totalRolls(40).build());
+		List<RollDto> listTotalRoll = new ArrayList<>();
+		listTotalRoll.add(RollDto.builder().numberDice(2).sideDice(4).totalRolls(20).build());
+		listTotalRoll.add(RollDto.builder().numberDice(1).sideDice(6).totalRolls(40).build());
 		
-		when(diceRepository.getDiceEntities()).thenReturn(listDiceEntity);
+		when(diceRepository.getTotalRollByNumberAndSideDice()).thenReturn(listDiceEntity);
 		when(diceEntityToTotalRollConvert.convert(Mockito.any())).thenReturn(listTotalRoll);
 		
-		List<TotalRollDto> response = totalRollService.getTotalRolls();
+		List<RollDto> response = totalRollService.getTotalRolls();
 		assertEquals(2, response.get(0).getNumberDice());
 		assertEquals(1, response.get(1).getNumberDice());
 		assertEquals(4, response.get(0).getSideDice());

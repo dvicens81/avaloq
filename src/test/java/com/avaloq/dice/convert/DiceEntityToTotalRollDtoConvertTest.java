@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.avaloq.dice.dto.TotalRollDto;
+import com.avaloq.dice.dto.RollDto;
 import com.avaloq.dice.entity.DiceEntity;
 
 
@@ -25,7 +25,7 @@ public class DiceEntityToTotalRollDtoConvertTest {
 		list.add(DiceEntity.builder().numberDice(2).sideDice(4).id(20).build());
 		list.add(DiceEntity.builder().numberDice(1).sideDice(6).id(40).build());
 		
-		List<TotalRollDto> response = convert.convert(list);
+		List<RollDto> response = convert.convert(list);
 		assertEquals(2, response.get(0).getNumberDice());
 		assertEquals(1, response.get(1).getNumberDice());
 		assertEquals(4, response.get(0).getSideDice());

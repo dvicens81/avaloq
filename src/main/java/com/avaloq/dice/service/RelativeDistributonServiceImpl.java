@@ -12,10 +12,18 @@ import com.avaloq.dice.entity.RollEntity;
 import com.avaloq.dice.repository.RollRepository;
 
 import lombok.AllArgsConstructor;
-
+/**
+ * Service layer.
+ * 
+ * This class is to manage the information related to number-side combination and
+ * the percentage that numbers appears on the rolls for all simulations.
+ * 
+ * @author dvicensnoguera
+ *
+ */
 @Service
 @AllArgsConstructor
-public class RelativeDistributorServiceImpl implements RelativeDistributionService{
+public class RelativeDistributonServiceImpl implements RelativeDistributionService{
 	
 	private final RollRepository rollRepository;
 	private final ListRollEntityToRelativeDtoConvert listRollEntityToRelativeDtoConvert;
@@ -28,6 +36,11 @@ public class RelativeDistributorServiceImpl implements RelativeDistributionServi
 						.filter(CollectionUtils::isNotEmpty)
 						.map(listRollEntityToRelativeDtoConvert::convert)
 						.orElseGet(RelativeDto::new);
+	}
+
+	@Override
+	public Iterable<RollEntity> saveAll(List<RollEntity> rolls) {
+		return rollRepository.saveAll(rolls);
 	}
 	
 	

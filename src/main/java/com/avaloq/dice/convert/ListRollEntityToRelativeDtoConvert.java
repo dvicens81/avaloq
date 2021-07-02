@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.avaloq.dice.dto.InformationRelativeDto;
 import com.avaloq.dice.dto.RelativeDto;
-import com.avaloq.dice.dto.TotalRollDto;
+import com.avaloq.dice.dto.RollDto;
 import com.avaloq.dice.entity.RollEntity;
 import com.avaloq.dice.utilities.PercentageUtilities;
 
@@ -43,8 +43,8 @@ public class ListRollEntityToRelativeDtoConvert {
 				.collect(Collectors.toList());
 	}
 	
-	private TotalRollDto buildTotalRoll(RollEntity rollEntity, int totalRolls) {
-		return TotalRollDto.builder()
+	private RollDto buildTotalRoll(RollEntity rollEntity, int totalRolls) {
+		return RollDto.builder()
 					.numberDice(rollEntity.getNumberDice())
 					.sideDice(rollEntity.getSideDice())
 					.totalRolls(totalRolls)

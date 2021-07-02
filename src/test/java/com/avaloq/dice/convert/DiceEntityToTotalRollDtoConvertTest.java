@@ -22,8 +22,8 @@ public class DiceEntityToTotalRollDtoConvertTest {
 	@Test
 	public void convertTest() {
 		List<DiceEntity> list = new ArrayList<>();
-		list.add(DiceEntity.builder().numberDice(2).sideDice(4).id(20).build());
-		list.add(DiceEntity.builder().numberDice(1).sideDice(6).id(40).build());
+		list.add(DiceEntity.builder().numberDice(2).sideDice(4).totalRoll(20).build());
+		list.add(DiceEntity.builder().numberDice(1).sideDice(6).totalRoll(40).build());
 		
 		List<RollDto> response = convert.convert(list);
 		assertEquals(2, response.get(0).getNumberDice());

@@ -15,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.avaloq.dice.convert.DiceFilterToDiceEntityConvert;
 import com.avaloq.dice.convert.DiceMapToDiceDtoConvert;
+import com.avaloq.dice.convert.MapDiceFilterToRollEntityConvert;
 import com.avaloq.dice.dto.DiceDto;
 import com.avaloq.dice.dto.DiceFilter;
 import com.avaloq.dice.operation.DiceCompleteRollOperation;
@@ -36,6 +37,10 @@ public class DiceServiceTest {
 	private DiceRepository diceRepository;
 	@Mock
 	private DiceFilterToDiceEntityConvert diceFilterToDiceEntity;
+	@Mock
+	private RelativeDistributionService relativeDistributionService; 
+	@Mock
+	private MapDiceFilterToRollEntityConvert mapDiceFilterToRollEntityConvert;
 	
 	@Test
 	public void testService() {
